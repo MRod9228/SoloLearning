@@ -1,0 +1,4 @@
+-Created a PLAYLIST
+-Added udemy courses
+-Got vscode all setup
+-Finished GIT beginners video - youtube
