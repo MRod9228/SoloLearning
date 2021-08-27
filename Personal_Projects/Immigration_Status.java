@@ -40,15 +40,12 @@ public class Immigration_Status {
 			driver.get("https://egov.uscis.gov/processing-times");
 		} else{System.out.println("Something went wrong");};
 		
-		//driver.get("https://egov.uscis.gov/processing-times/es");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\'selectForm\']/option[7]")));
 		driver.findElement(By.xpath("//*[@id=\'selectForm\']/option[7]")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#officeOrCenter > option:nth-child(2)"))).click();
 		driver.findElement(By.cssSelector("#getProcTimes")).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\'inquiryDateHeader\']/p")));
 		
-		//String currentDate = driver.findElement(By.cssSelector("#resultList > li:nth-child(2)")).getText();
-		//Currently going with cssSelector #date which is not reliable but will check back and fix it when I learn more.
 		String currentDate = driver.findElement(By.cssSelector("#date")).getText();
 		if (language.equals("English")) {
 			System.out.println("Currently processing receipts from: " +currentDate);	
